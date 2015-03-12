@@ -25,6 +25,7 @@ int main(){
     coolStruct s1;
     s1.u = u;
     s1.u.i = 71;
+    s1.type = INT;
     // 71 is G in ascii
     printf("u.c=%c\n",s1.u.c);
 
