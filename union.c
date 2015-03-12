@@ -7,19 +7,26 @@ typedef enum unionType unionType;
 union coolUnion {
     char c;
     int  i;
-    unionType type;
 };
 
 typedef  union coolUnion coolUnion;
+
+struct coolStruct {
+    coolUnion u;
+    unionType type;
+};
+
+typedef struct coolStruct coolStruct;
 
 
 int main(){
     coolUnion u;
     printf("size of union = %d\n",sizeof(coolUnion));
-    u.type = INT;
-    u.i = 71;
+    coolStruct s1;
+    s1.u = u;
+    s1.u.i = 71;
     // 71 is G in ascii
-    printf("u.c=%c\n",u.c);
+    printf("u.c=%c\n",s1.u.c);
 
 
 
